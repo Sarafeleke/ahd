@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Amanawit Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Amanawit Design</div>
+            <div class="nav-toggle" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Shop</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Shops</h1>
+        <p>Luxury traditional Ethiopian fashion services tailored to your needs</p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
+                        <path d="M2 17L12 22L22 17"></path>
+                        <path d="M2 12L12 17L22 12"></path>
+                    </svg>
+                </div>
+                <h3>Custom Habesha Dress Design</h3>
+                <p>Bespoke traditional and modern Habesha dresses crafted to your exact specifications. Our expert designers work with you to create unique pieces that reflect your personal style while honoring cultural traditions.</p>
+               
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3>Wedding Traditional Wear</h3>
+                <p>Exquisite wedding attire that celebrates Ethiopian cultural heritage. From traditional Habesha Kemis to modern interpretations, we create stunning bridal wear for your special day.</p>
+               
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                    </svg>
+                </div>
+                <h3>Cultural Event Styling</h3>
+                <p>Professional styling services for cultural events, festivals, and celebrations. We help you choose the perfect outfit that honors tradition while making you stand out.</p>
+               
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 20V10"></path>
+                        <path d="M18 20V4"></path>
+                        <path d="M6 20v-4"></path>
+                    </svg>
+                </div>
+                <h3>Tailoring & Fitting</h3>
+                <p>Expert tailoring services to ensure perfect fit and comfort. Our skilled craftsmen provide alterations, adjustments, and custom fittings for all types of traditional Ethiopian clothing.</p>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Experience Amanawit Design?</h2>
+        <p>Discover our exquisite collection and find the perfect piece for you</p>
+        <button class="cta-button">Shop Now</button>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    document.querySelector('.nav-toggle').classList.remove('active');
+                    document.querySelector('.nav-menu').classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
