@@ -14,7 +14,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">Amanawit Design</div>
-            <div class="nav-toggle" onclick="this.classList.toggle('active'); document.querySelector('.nav-menu').classList.toggle('active');">
+            <div class="nav-toggle" onclick="toggleMenu(this)">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -98,5 +98,21 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    document.querySelector('.nav-toggle').classList.remove('active');
+                    document.querySelector('.nav-menu').classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
