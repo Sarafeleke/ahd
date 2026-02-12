@@ -104,30 +104,28 @@
             </div>
     </section>
 
-    <script src="script.js"></script>
     <script>
-        function toggleMenu() {
+        // Hamburger Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.nav-toggle');
             const navMenu = document.querySelector('.nav-menu');
-            if (navToggle && navMenu) {
-                navToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            }
-        }
-        
-        // Close menu when clicking links
-        document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const navToggle = document.querySelector('.nav-toggle');
-                    const navMenu = document.querySelector('.nav-menu');
-                    if (navToggle && navMenu) {
+
+            if (navToggle && navMenu) {
+                // Mobile menu toggle
+                navToggle.addEventListener('click', () => {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
                         navToggle.classList.remove('active');
                         navMenu.classList.remove('active');
-                    }
+                    });
                 });
-            });
+            }
         });
     </script>
 </body>

@@ -95,22 +95,42 @@
         <button class="cta-button">Shop Now</button>
     </section>
 
-    <script src="script.js"></script>
     <script>
-        function toggleMenu(element) {
-            element.classList.toggle('active');
-            document.querySelector('.nav-menu').classList.toggle('active');
-        }
-        
+        // Hamburger Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
             const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    document.querySelector('.nav-toggle').classList.remove('active');
-                    document.querySelector('.nav-menu').classList.remove('active');
+
+            if (navToggle && navMenu) {
+                // Mobile menu toggle
+                navToggle.addEventListener('click', () => {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
                 });
-            });
+
+                // Close mobile menu when clicking on a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
         });
+
+        // Existing intro and particle code (if needed)
+        const particlesContainer = document.querySelector('.particles-container');
+        if (particlesContainer) {
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
     </script>
 </body>
 </html>
